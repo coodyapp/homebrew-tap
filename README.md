@@ -1,11 +1,11 @@
-# homebrew-token-my-bar
+# homebrew-tap
 
-Homebrew tap for [TokenMyBar](https://github.com/coodyapp/token-my-bar).
+Homebrew tap for coodyapp apps.
 
 ## Install
 
 ```bash
-brew tap coodyapp/token-my-bar
+brew tap coodyapp/tap
 brew install --cask token-my-bar
 ```
 
@@ -15,3 +15,9 @@ brew install --cask token-my-bar
 brew update
 brew upgrade --cask token-my-bar
 ```
+
+## Casks
+
+| Cask | Source |
+| --- | --- |
+| `token-my-bar` | [coodyapp/token-my-bar](https://github.com/coodyapp/token-my-bar) |

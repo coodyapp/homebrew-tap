@@ -1,7 +1,7 @@
 # Homebrew cask for TokenMyBar.
 #
 # Usage:
-#   brew tap coodyapp/token-my-bar
+#   brew tap coodyapp/tap
 #   brew install --cask token-my-bar
 #
 # The sha256 below must match the DMG attached to the GitHub release for
