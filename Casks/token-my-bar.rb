@@ -8,8 +8,8 @@
 # `version` (published by coodyapp/token-my-bar's .github/workflows/release.yml).
 # Update both together.
 cask "token-my-bar" do
-  version "1.0.7"
-  sha256 "832738c11c33af1021ed21c9114f6f53da03ae58349443ca1781a45a1423045e"
+  version "1.0.8"
+  sha256 "5e65a1b3fa46ed883637fb4d63dcf27d9b3438a05c28d14e98f019843373ecd1"
 
   url "https://github.com/coodyapp/token-my-bar/releases/download/v#{version}/TokenMyBar-#{version}.dmg"
   name "TokenMyBar"
