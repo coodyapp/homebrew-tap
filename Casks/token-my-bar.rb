@@ -24,15 +24,17 @@ cask "token-my-bar" do
 
   caveats <<~EOS
     Releases are not yet notarized (no Apple Developer ID), so Gatekeeper
-    blocks the first launch. Either reinstall without the quarantine flag:
-
-      brew reinstall --cask token-my-bar --no-quarantine
-
-    or clear the flag on the installed app:
+    blocks the first launch. Either clear the quarantine flag on the
+    installed app:
 
       xattr -rd com.apple.quarantine /Applications/TokenMyBar.app
 
     or launch once, then allow it under
     System Settings → Privacy & Security → Open Anyway.
+
+    To install without quarantine in the first place (Homebrew 6 removed
+    the --no-quarantine flag; the environment variable still works):
+
+      HOMEBREW_CASK_OPTS=--no-quarantine brew reinstall --cask token-my-bar
   EOS
 end
