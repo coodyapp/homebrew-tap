@@ -20,21 +20,27 @@ cask "token-my-bar" do
 
   app "TokenMyBar.app"
 
+  # Releases are ad-hoc signed (no Apple Developer ID yet), so Gatekeeper
+  # would block the first launch of a quarantined install. Gatekeeper only
+  # assesses quarantined apps; stripping the flag here lets the app open
+  # normally without users needing --no-quarantine or a manual xattr.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/TokenMyBar.app"],
+                   sudo:         false,
+                   must_succeed: false
+  end
+
   zap trash: "~/Library/Application Support/TokenMyBar"
 
   caveats <<~EOS
-    Releases are not yet notarized (no Apple Developer ID), so Gatekeeper
-    blocks the first launch. Either clear the quarantine flag on the
-    installed app:
+    Releases are ad-hoc signed (no Apple Developer ID yet). This install
+    removed the quarantine flag automatically, so TokenMyBar opens normally.
+
+    If macOS still blocks the first launch, run:
 
       xattr -rd com.apple.quarantine /Applications/TokenMyBar.app
 
-    or launch once, then allow it under
-    System Settings → Privacy & Security → Open Anyway.
-
-    To install without quarantine in the first place (Homebrew 6 removed
-    the --no-quarantine flag; the environment variable still works):
-
-      HOMEBREW_CASK_OPTS=--no-quarantine brew reinstall --cask token-my-bar
+    or allow it under System Settings → Privacy & Security → Open Anyway.
   EOS
 end
