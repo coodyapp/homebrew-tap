@@ -8,8 +8,8 @@
 # `version` (published by coodyapp/token-my-bar's .github/workflows/release.yml).
 # Update both together.
 cask "token-my-bar" do
-  version "1.0.6"
-  sha256 "920285c954c8e17a699d73071b8bea567a9402a4d3652e00fac8635af85b7406"
+  version "1.0.7"
+  sha256 "832738c11c33af1021ed21c9114f6f53da03ae58349443ca1781a45a1423045e"
 
   url "https://github.com/coodyapp/token-my-bar/releases/download/v#{version}/TokenMyBar-#{version}.dmg"
   name "TokenMyBar"
@@ -23,8 +23,16 @@ cask "token-my-bar" do
   zap trash: "~/Library/Application Support/TokenMyBar"
 
   caveats <<~EOS
-    Releases are currently unsigned. If Gatekeeper blocks the first launch,
-    right-click TokenMyBar.app and choose Open, or allow it under
-    System Settings → Privacy & Security.
+    Releases are not yet notarized (no Apple Developer ID), so Gatekeeper
+    blocks the first launch. Either reinstall without the quarantine flag:
+
+      brew reinstall --cask token-my-bar --no-quarantine
+
+    or clear the flag on the installed app:
+
+      xattr -rd com.apple.quarantine /Applications/TokenMyBar.app
+
+    or launch once, then allow it under
+    System Settings → Privacy & Security → Open Anyway.
   EOS
 end
