@@ -8,8 +8,8 @@
 # `version` (published by coodyapp/token-my-bar's .github/workflows/release.yml).
 # Update both together.
 cask "token-my-bar" do
-  version "1.0.8"
-  sha256 "5e65a1b3fa46ed883637fb4d63dcf27d9b3438a05c28d14e98f019843373ecd1"
+  version "1.0.9"
+  sha256 "7359eb0ffffa6d881c44d7606a7014dd40605d9a23aa39a6dda377f48cd6df16"
 
   url "https://github.com/coodyapp/token-my-bar/releases/download/v#{version}/TokenMyBar-#{version}.dmg"
   name "TokenMyBar"
@@ -31,7 +31,9 @@ cask "token-my-bar" do
                    must_succeed: false
   end
 
-  zap trash: "~/Library/Application Support/TokenMyBar"
+  # The app writes its snapshot cache to token-my-bar/, not TokenMyBar/ — the
+  # old spelling matched nothing, so zap left the cache behind.
+  zap trash: "~/Library/Application Support/token-my-bar"
 
   caveats <<~EOS
     Releases are ad-hoc signed (no Apple Developer ID yet). This install
