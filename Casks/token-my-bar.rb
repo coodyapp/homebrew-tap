@@ -13,7 +13,7 @@ cask "token-my-bar" do
 
   url "https://github.com/coodyapp/token-my-bar/releases/download/v#{version}/TokenMyBar-#{version}.dmg"
   name "TokenMyBar"
-  desc "Menu bar app showing live AI token usage for Claude Code, Codex, and OpenCode"
+  desc "Menu bar app showing live AI usage for Claude Code, Codex, OpenCode, and Antigravity"
   homepage "https://github.com/coodyapp/token-my-bar"
 
   depends_on macos: :sonoma
