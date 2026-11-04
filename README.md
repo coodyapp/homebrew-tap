@@ -6,10 +6,11 @@ Homebrew tap for coodyapp apps.
 
 ```bash
 brew tap coodyapp/tap
-brew install --cask token-my-bar
+brew install coodyapp/tap/hybrid-os      # formula: hy, hyt, hybridd
+brew install --cask token-my-bar         # cask: TokenMyBar.app
 ```
 
-Casks remove the macOS quarantine flag after install (postflight), so
+Casks remove the macOS quarantine flag after install (`postflight_steps`), so
 ad-hoc-signed apps open without Gatekeeper blocking them — no
 `--no-quarantine` or manual `xattr` needed.
 
@@ -17,8 +18,15 @@ ad-hoc-signed apps open without Gatekeeper blocking them — no
 
 ```bash
 brew update
+brew upgrade hybrid-os
 brew upgrade --cask token-my-bar
 ```
+
+## Formulae
+
+| Formula | Platforms | Source |
+| --- | --- | --- |
+| `hybrid-os` | macOS, Apple Silicon | [coodyapp/hybrid-os](https://github.com/coodyapp/hybrid-os) (prebuilt release binaries) |
 
 ## Casks
 

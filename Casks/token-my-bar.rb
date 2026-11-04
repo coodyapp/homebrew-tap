@@ -24,11 +24,10 @@ cask "token-my-bar" do
   # would block the first launch of a quarantined install. Gatekeeper only
   # assesses quarantined apps; stripping the flag here lets the app open
   # normally without users needing --no-quarantine or a manual xattr.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/TokenMyBar.app"],
-                   sudo:         false,
-                   must_succeed: false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:         ["-dr", "com.apple.quarantine", "{{appdir}}/TokenMyBar.app"],
+        must_succeed: false
   end
 
   # The app writes its snapshot cache to token-my-bar/, not TokenMyBar/ — the
