@@ -9,14 +9,15 @@
 class HybridOs < Formula
   desc "Local-first, federated Personal AI Control Plane"
   homepage "https://hyos.coody.app"
-  version "0.28.0"
   license "MIT"
 
   on_macos do
     depends_on arch: :arm64
 
-    url "https://github.com/coodyapp/hybrid-os/releases/download/v0.28.0/hybrid-os-0.28.0-aarch64-apple-darwin.tar.gz"
-    sha256 "63ecd078e7774c409f85143c8ec9715c30104d2b3266bd2f5a5599aea6e38442"
+    on_arm do
+      url "https://github.com/coodyapp/hybrid-os/releases/download/v0.28.0/hybrid-os-0.28.0-aarch64-apple-darwin.tar.gz"
+      sha256 "63ecd078e7774c409f85143c8ec9715c30104d2b3266bd2f5a5599aea6e38442"
+    end
   end
 
   on_linux do
