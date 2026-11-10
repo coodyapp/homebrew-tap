@@ -15,20 +15,20 @@ class HybridOs < Formula
     depends_on arch: :arm64
 
     on_arm do
-      url "https://github.com/coodyapp/hybrid-os/releases/download/v0.36.0/hybrid-os-0.36.0-aarch64-apple-darwin.tar.gz"
-      sha256 "987b5470e4f768e84e339565c45b4c875f015f89d4fc7dde52d122e605fcfeb5"
+      url "https://github.com/coodyapp/hybrid-os/releases/download/v0.37.0/hybrid-os-0.37.0-aarch64-apple-darwin.tar.gz"
+      sha256 "0cc5357d577b97ebe117f3fd508f292546c0ad5478ddfd815c2733db1a4b38f2"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/coodyapp/hybrid-os/releases/download/v0.36.0/hybrid-os-0.36.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ae4c64f2ad6c58a5616a89b62436e89badd97a534457b1db6b6d6e8dbf0c3c7f"
+      url "https://github.com/coodyapp/hybrid-os/releases/download/v0.37.0/hybrid-os-0.37.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "938f32c307b19666c64e6e5b2d0f15a65c499452545e65ff8213ec66aa9a99be"
     end
 
     on_arm do
-      url "https://github.com/coodyapp/hybrid-os/releases/download/v0.36.0/hybrid-os-0.36.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7b4c3595e076c947a0b67026cda6b029fc70419b84899d0e0672a407ecd3c4e2"
+      url "https://github.com/coodyapp/hybrid-os/releases/download/v0.37.0/hybrid-os-0.37.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "672151383d50c601b8fdf6877d082009bb8907cd9a0ec18d8c893efbb4d6f010"
     end
   end
 
